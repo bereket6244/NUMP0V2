@@ -1,0 +1,143 @@
+/* *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    background-color: #878472;
+    height: 13rem;
+    width: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: .5rem;
+}
+
+button{
+    height: fit-content;
+    font-size: 80%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+/* .dropdown-menu {
+    position: absolute;
+    left: 50%;
+    top: 100vh;
+} */
+/* 
+.dropdown-content {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+} */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    height: 100vh;
+    /* width: 350px; */
+    aspect-ratio: 35/55; 
+}
+
+.box {
+    height: 100%;
+    width: 100%;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+}
+
+.menu {
+    height: 45px;
+    width: 100%;
+    background-color: #3f3f37;
+}
+
+.preview {
+    height: 40%;
+    width: 100%;
+    background-color: #878472;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: min-content;
+    grid-auto-columns: min-content;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.square {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+}
+
+.guess {
+    background-color: #EBF2FA;
+}
+
+.estimate {
+    background-color: #C7DAF0;
+}
+
+.keyboard {
+    height: 60%;
+    width: 100%;
+    background-color: #EBF2FA;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+    padding: 1rem;
+}
+
+button {
+    border-radius: 1rem;
+    background-color: #DE541E;
+    border: #DE541E;
+    color: white;
+}
+
+button:hover {
+    background-color: #75290b;
+
+}
+.span-3 {
+    grid-column: span 3;
+}
+
+img{
+    height: 1.5rem;
+}
+
+.history {
+    background-color: green;
+}
