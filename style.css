@@ -67,6 +67,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: .5rem;
+    color:white;
 }
 
 .guess , .guessed {
