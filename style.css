@@ -5,9 +5,14 @@
     padding: 0;
     margin: 0;
     font-size: 20px;
+    color: white;
+    font-weight: bold;
 }
 html {
     display: flex;
+    /* for mobile  */
+    /* height: fit-content;
+    width: fit-content; */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -21,8 +26,8 @@ body {
 }
 .container {
     display: flex;
-    width: 350px ;
-    height: 252.5px;
+    width: 700px ;
+    height: 505px;
     /* for website look */
     border-radius: 1rem;
     overflow: hidden;
@@ -67,7 +72,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: .5rem;
-    color:white;
+    color: white;
 }
 
 .guess , .guessed {
@@ -77,14 +82,13 @@ body {
 .estimate, .estimated {
     background-color: #7389A8;
 }
-
-
 .keyboard {
     height: 60%;
     width: 100%;
     background-color: #16344d;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* return 4 to 5 if the history button is present */
     grid-template-rows: repeat(4, 1fr);
     gap: 0.8rem;
     padding: 1rem;

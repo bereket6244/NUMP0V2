@@ -134,77 +134,87 @@ function pressHistory(){
     alert("the history is right there homie")
 }
 function submitGuess(){
-    
-        
-        if (correctNumber === 4 && correctPosition === 4) {
-            alert("you won and it took you " + triedAmount + " tries" )
-        }
-        else {
-            if (first.innerHTML === "" || second.innerHTML === "" || third.innerHTML === "" || fourth.innerHTML === ""){
-                alert("please input all fields homie")
+    checkNumPresence();
+    correctNumber = 0
+    correctPosition = 0
+     }
+function checkNumPresence() {
+    /*starting from this till the next if statement: checks to see the correct 
+    orientation of numbers is entered from user*/
+    if  ( first.innerHTML === second.innerHTML || first.innerHTML=== third.innerHTML || first.innerHTML === fourth.innerHTML ||
+            second.innerHTML === third.innerHTML || second.innerHTML === fourth.innerHTML||
+            third.innerHTML === fourth.innerHTML){
+            alert("you cant input the same digit twice")
             }
-            else if (first.innerHTML === second.innerHTML || first.innerHTML === third.innerHTML || first.innerHTML === fourth.innerHTML ||
-                second.innerHTML === third.innerHTML || second.innerHTML === fourth.innerHTML ||
-                third.innerHTML === fourth.innerHTML) {
-                    alert("you cant input the same digit twice")
-                }
-            else{    
+            else if (first.innerHTML === "" || second.innerHTML === "" || third.innerHTML === "" || fourth.innerHTML === ""){
+            alert("input all fields homie")
+         }
+            else {
+            let n1 = first.innerHTML.toString()
+            let n2 = second.innerHTML.toString()
+            let n3 = third.innerHTML.toString()
+            let n4 = fourth.innerHTML.toString()
+                 // counts the amount of correct numbers and correct positions. taken from Brook Feleke(ETS0184/12, AASTU)        
+                if (first.innerHTML !== ""  && second.innerHTML !== ""&& third.innerHTML !== ""&& fourth.innerHTML !== ""){
                 for (let j = 0; j <= 3; j++) {
                 for (let i = 0; i <= 3; i++) {
-                    if (document.getElementsByClassName('guess')[j].innerText === ranNum[i]){
-                        correctNumber++
-                        if(j === i){
-                            correctPosition++
-                           }
-                       }
-                   }
-               }
-                let n1 = first.innerHTML.toString()
-                let n2 = second.innerHTML.toString()
-                let n3 = third.innerHTML.toString()
-                let n4 = fourth.innerHTML.toString()
-                let nn = correctNumber.toString()
-                let np = correctPosition.toString()
-                firsth.innerText = first.innerHTML
-                first.classList.remove("active")
-                secondh.innerText =second.innerHTML
-                second.classList.remove("active")
-                thirdh.innerText = third.innerHTML
-                third.classList.remove("active")
-                fourthh.innerText = fourth.innerHTML
-                fourth.classList.remove("active")
-                numberh.innerHTML = correctNumber
-                positionh.innerHTML = correctPosition
-                for (let k = 0; k <= triedAmount-1; k++) {
-                    let abv = document.getElementsByClassName("cat1")[k]
-                    let bbv = document.getElementsByClassName("cat2")[k]
-                    let cbv = document.getElementsByClassName("cat3")[k]
-                    let dbv = document.getElementsByClassName("cat4")[k]
-                    let ebv = document.getElementsByClassName("cat5")[k]
-                    let fbv = document.getElementsByClassName("cat6")[k]
-                    if (abv.innerHTML === ""){
-                        abv.innerHTML = n1
-                        bbv.innerHTML = n2
-                        cbv.innerHTML = n3
-                        dbv.innerHTML = n4
-                        ebv.innerHTML = nn
-                        fbv.innerHTML = np
-                    }
-                    else {
-                        continue
+                     if (document.getElementsByClassName('guess')[j].innerText === ranNum[i]){
+                 correctNumber++
+                    if(j === i){
+                     correctPosition++
                     }
                 }
-                first.innerHTML = ""
-                second.innerHTML = ""
-                third.innerHTML = ""
-                fourth.innerHTML = ""
-                correctPosition = 0
-                correctNumber = 0
-                createSquares()
-            } 
-            triedAmount++
+            }
         }
-        console.log(correctNumber)
-        
-        
-     }
+
+        // Converts the amount of correct numbers and correct positions to string 
+        let nn = correctNumber.toString()
+        let np = correctPosition.toString()
+        /* the for loop below gets the number the user has 
+        input("n" + i)(where i is an integer from 1-4), amount of correct numbers and 
+         the amount of correct positions and assigns them to the empty 
+         divs that were assigned 6 ("cat" + i)(where i is an integer form 1-6) classes */ 
+        for (let k = triedAmount - 1; k <= triedAmount - 1 ; k++) {
+        let abv = document.getElementsByClassName("cat1")[k]
+        let bbv = document.getElementsByClassName("cat2")[k]
+        let cbv = document.getElementsByClassName("cat3")[k]
+        let dbv = document.getElementsByClassName("cat4")[k]
+        let ebv = document.getElementsByClassName("cat5")[k]
+        let fbv = document.getElementsByClassName("cat6")[k]
+        abv.innerHTML = n1
+        bbv.innerHTML = n2
+        cbv.innerHTML = n3
+        dbv.innerHTML = n4
+        ebv.innerHTML = nn
+        fbv.innerHTML = np
+        firsth.innerHTML = n1   
+        secondh.innerHTML = n2 
+        thirdh.innerHTML = n3   
+        fourthh.innerHTML = n4   
+        numberh.innerHTML = nn   
+        positionh.innerHTML = np   
+        }
+        /* if the correct number of guesses and number of position is not found. this
+         creates the next set of squares in the history tab and emptys out
+         the user input field and removes the class name "active" that
+         was given when the user submitted his/her previous guess.*/ 
+        if (correctNumber !==4 || correctPosition !==4 ) {
+            triedAmount++
+            createSquares(); 
+            first.innerHTML = ""
+            first.classList.remove("active")
+            second.innerHTML = ""
+            second.classList.remove("active")
+            third.innerHTML = ""
+            third.classList.remove("active")
+            fourth.innerHTML = ""
+            fourth.classList.remove("active")
+        }
+        // outputs message for the winner and the amount of tries it took them
+        if (correctNumber === 4 && correctPosition === 4){
+            alert("yasss, slayy. Took you " + triedAmount + " plus 1 number of tries")
+            stopInteraction()   
+            }
+        }        
+}   
+}
