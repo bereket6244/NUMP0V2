@@ -8,29 +8,29 @@
     color: white;
     font-weight: bold;
 }
-html {
+/* html {
     display: flex;
     /* for mobile  */
     /* height: fit-content;
     width: fit-content; */
-    justify-content: center;
+/*     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-}
-body {
+    min-height: 100vh; */
+
+/* body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width:100vw;
-}
+   
+} */
 .container {
     display: flex;
-    width: 1920px ;
-    height: 1080px;
+     height: 100vh;
+    width:100vw;
     /* for website look */
     border-radius: 1rem;
     overflow: hidden;
+    
 }
 
 .box {
