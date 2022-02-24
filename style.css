@@ -21,8 +21,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: fit-content;
-    width: fit-content;
+    height: 100vh;
+    width:100vw;
 }
 .container {
     display: flex;
