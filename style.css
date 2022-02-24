@@ -26,8 +26,8 @@ body {
 }
 .container {
     display: flex;
-    width: 700px ;
-    height: 505px;
+    width: 1920px ;
+    height: 1080px;
     /* for website look */
     border-radius: 1rem;
     overflow: hidden;
