@@ -55,8 +55,7 @@ body {
 .container {
     display: flex;
     width: 400px;
-    /* width: 350px; */
-    aspect-ratio: 35/55;  
+    height:505px;  
 }
 
 .box {
