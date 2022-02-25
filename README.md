@@ -28,5 +28,5 @@ guess
 
 ps. The history is not functional yet.
 
-Enjoy <strong>[Number Position]</strong>(https://bereket6244.github.io/NUMP0V2/)
+Enjoy <strong>[Number Position](https://bereket6244.github.io/NUMP0V2/)</strong>
 
