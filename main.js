@@ -9,16 +9,22 @@ let first = document.getElementById("first")
 let second = document.getElementById("second")
 let third = document.getElementById("third")
 let fourth = document.getElementById("fourth")
-let ranNum = []
 let correctPosition = 0
 let correctNumber = 0
 let triedAmount = 1
-const asd = document.querySelector
+let ranNum = []
+
+/* runs the functions that make the first rows of 
+squares in the hisory section, activates the 
+click and keyboard listeneres and generates a random 
+four digit number when first loaded*/
 document.addEventListener('DOMContentLoaded', () => {
     createSquares();
     startInteraction();
     generateRandomNumber();
 })
+
+//generates a random four digit number with no digit being similar
 function generateRandomNumber(){
     ranNum[0] = (Math.floor(Math.random() * 10)).toString()
     while(ranNum [0] === "0"){
@@ -35,10 +41,11 @@ function generateRandomNumber(){
     ranNum[3] = (Math.floor(Math.random() * 10)).toString()
     while(ranNum[3] === ranNum[0]||ranNum[3] === ranNum[1]||ranNum[3] === ranNum[2]){
     ranNum[3] = (Math.floor(Math.random() * 10)).toString()
-    }
-    
+    }   
 }
-function createSquares () {
+
+// creates the squares when you submit a guess and once when you load the page
+function createSquares() {
     const gameBoard = document.getElementById('board')
      for (let i = 1; i <= 6; i++) {
         let square = document.createElement('div')
@@ -56,16 +63,20 @@ function createSquares () {
         gameBoard.appendChild(square)
     }
 }
-/* loads when the page first loads and then waits for input taken from "https://youtu.be/Wak7iN4JZzU" 
+
+/* loads when the page first loads and then waits for input
+ taken from "https://youtu.be/Wak7iN4JZzU" 
 upuntil the handleKeypress function*/
 function startInteraction() {
     document.addEventListener("click", handleMouseClick)
     document.addEventListener("keydown", handleKeyPress)
 }
+
 function stopInteraction() {
     document.removeEventListener("click", handleMouseClick)
     document.removeEventListener("keydown", handleKeyPress)
 }
+
 function handleMouseClick(e) {
     if (e.target.matches("[data-enter]")){
         submitGuess()
@@ -84,6 +95,7 @@ function handleMouseClick(e) {
         return
     }
 }
+
 function handleKeyPress(e) {
     if (e.key === "Enter") {
         submitGuess()
@@ -129,21 +141,25 @@ function deleteKey(){
         }
     }  
 }
-
+ 
+// history button function nothing assigned to it yet
 function pressHistory(){
     alert("the history is right there homie")
 }
+
+// the function that runs when you press enter
 function submitGuess(){
     checkNumPresence();
     correctNumber = 0
     correctPosition = 0
      }
+
 function checkNumPresence() {
     /*starting from this till the next if statement: checks to see the correct 
     orientation of numbers is entered from user*/
     if  ( first.innerHTML === second.innerHTML || first.innerHTML=== third.innerHTML || first.innerHTML === fourth.innerHTML ||
-            second.innerHTML === third.innerHTML || second.innerHTML === fourth.innerHTML||
-            third.innerHTML === fourth.innerHTML){
+          second.innerHTML === third.innerHTML || second.innerHTML === fourth.innerHTML||
+          third.innerHTML === fourth.innerHTML){
             alert("you cant input the same digit twice")
             }
             else if (first.innerHTML === "" || second.innerHTML === "" || third.innerHTML === "" || fourth.innerHTML === ""){
@@ -194,6 +210,7 @@ function checkNumPresence() {
         numberh.innerHTML = nn   
         positionh.innerHTML = np   
         }
+        
         /* if the correct number of guesses and number of position is not found. this
          creates the next set of squares in the history tab and emptys out
          the user input field and removes the class name "active" that

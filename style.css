@@ -1,5 +1,3 @@
-
-
 *{
     box-sizing: border-box;
     padding: 0;
@@ -8,54 +6,38 @@
     color: white;
     font-weight: bold;
 }
-/* html {
-    display: flex;
-    /* for mobile  */
-    /* height: fit-content;
-    width: fit-content; */
-/*     justify-content: center;
-    align-items: center;
-    min-height: 100vh; */
-
-/* body {
+body {
     display: flex;
     align-items: center;
     justify-content: center;
-   
-} */
+    min-height: 100vh;    
+}
 .container {
     display: flex;
-     height: 100vh;
-    width:100vw;
-    /* for website look */
+    height: 400px;
+    width: 505px;
     border-radius: 1rem;
     overflow: hidden;
-    
 }
-
 .box {
     height: 100%;
     width: 100%;
 }
-
 .game {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;   
 }
-
 .menu {
     height: 2.25rem;
     width: 100%;
     background-color: #3f3f37;
 }
-
 .preview {
     height: 40%;
     width: 100%;
     background-color: #416788;
     display: grid;
-    gap: 0.1rem;
+    gap: 0.2rem;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-auto-rows: min-content;
@@ -64,7 +46,6 @@
     justify-content: center;
     padding: 1rem;
 }
-
 .square {
     width: 100%;
     aspect-ratio: 1/1;
@@ -74,11 +55,9 @@
     border-radius: .5rem;
     color: white;
 }
-
 .guess , .guessed {
     background-color: #11312A;
 }
-
 .estimate, .estimated {
     background-color: #7389A8;
 }
@@ -89,41 +68,37 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* return 4 to 5 if the history button is present */
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 0.8rem;
     padding: 1rem;
 }
-
 button {
     border-radius: 1rem;
-    background-color: #11312A;
+    background-color: #7389a8;
     border: #11312A;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 button:hover {
     filter: brightness(120%);
     cursor: pointer;
-
 }
 .span-3 {
     grid-column: span 3;
 }
-
 img{
     height: 1.5rem;
 }
-
 .history {
     padding: 1rem;
-    /* padding-top: 2rem ; */
     background-color: #244969;
     overflow: auto;
 }
 #board-container {
     height: 100%;
-    width: 100%;
-    
+    width: 100%;  
 }
 #board {
     display: grid;
@@ -133,10 +108,7 @@ img{
     column-gap: 0.2rem;
     background-color: #244969;
     padding: 1rem;
-
 }
-
-
 .history-square {
     width: 100%;
     aspect-ratio: 1/1;
@@ -148,7 +120,6 @@ img{
 .red {
     background-color: #CD2527; 
 }
-
 .green {
     background-color: #43CD43;
 }
