@@ -1,4 +1,5 @@
 Number-Position GAME
+
 The rules are simple. Theres a four digit number and your goal is to 
 find that four digit number. You start by submitting your guess like 
 you see here 
@@ -15,12 +16,17 @@ correct positions is stored on the second light blue squares like so
 here i guessed 1234 as my initial guess and the game told me that two
 of those four digits match the one that your supposed to find and out 
 of those two only one is in the correct position. 
+
 Note
+
 . You can not input the same digits for when youre trying to submit a 
 guess
+
 . You have to input all four digits to be able to submit a guess 
+
 . The number you have to find never has similar digits 
 
 ps. The history is not functional yet.
+
 Enjoy [Number Position](https://bereket6244.github.io/NUMP0V2/)
 
