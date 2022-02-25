@@ -28,5 +28,7 @@ guess
 
 ps. The history is not functional yet.
 
+pps. The game isn't responsive for mobile yet so enjoy on your PC
+
 Enjoy <strong>[Number Position](https://bereket6244.github.io/NUMP0V2/)</strong>
 
